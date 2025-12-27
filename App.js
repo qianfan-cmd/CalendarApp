@@ -318,7 +318,7 @@ export default function App() {
             <TouchableOpacity style={styles.exportBtn} onPress={handleExport}><Text style={{ color: '#fff' }}>📤 导出/备份</Text></TouchableOpacity>
             <TextInput style={[styles.ioInput, {height: 45}]} placeholder="JSON 订阅地址" value={subUrl} onChangeText={setSubUrl} />
             <TouchableOpacity onPress={handleSubscribe} style={[styles.btnSave, {marginVertical: 10}]}><Text style={{color:'#fff', textAlign:'center'}}>云同步</Text></TouchableOpacity>
-            <TextInput style={styles.ioInput} placeholder="粘贴备份代码导入" multiline value={importText} onChangeText={setImportText} />
+            <TextInput style={styles.ioInput} placeholder="粘贴备份代码导入" multiline scrollEnabled={true} value={importText} onChangeText={setImportText} />
             <View style={styles.modalFooter}>
               <TouchableOpacity onPress={() => setIoModalVisible(false)} style={styles.btnCancel}><Text>取消</Text></TouchableOpacity>
               <TouchableOpacity onPress={handleImport} style={[styles.btnSave, {backgroundColor: '#28a745'}]}><Text style={{color:'#fff'}}>导入</Text></TouchableOpacity>
@@ -436,7 +436,7 @@ const styles = StyleSheet.create({
 
   dialogOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },
   ioBox: { backgroundColor: '#FFF', width: '90%', borderRadius: 15, padding: 20 },
-  ioInput: { backgroundColor: '#F5F5F5', borderRadius: 8, padding: 10, marginTop: 10, textAlignVertical: 'top' },
+  ioInput: { backgroundColor: '#F5F5F5', borderRadius: 8, padding: 10, marginTop: 10, textAlignVertical: 'top', height: 100 },
   exportBtn: { backgroundColor: '#00adf5', padding: 12, borderRadius: 8, alignItems: 'center' },
   
   modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' },
